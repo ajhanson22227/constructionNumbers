@@ -1,13 +1,12 @@
 import 'package:construction/construction_icons.dart';
 import 'package:flutter/material.dart';
 
-
-class RoadConstruction extends StatefulWidget{
+class RoadConstruction extends StatefulWidget {
   @override
   _RoadConstructionAppState createState() => _RoadConstructionAppState();
 }
 
-class _RoadConstructionAppState extends State<RoadConstruction>{
+class _RoadConstructionAppState extends State<RoadConstruction> {
   //3 text controllers. Only inputs should be length, width & depth
   final lengthController = new TextEditingController();
   final widthController = new TextEditingController();
@@ -38,40 +37,46 @@ class _RoadConstructionAppState extends State<RoadConstruction>{
   String hotBitAsphaltString = '0.0';
   String gravelBaseCourseString = '0.0';
 
-
-
-  getNumbers(){
-    lengthController.text == '' ? lengthInputValue = 0.0 : lengthInputValue = double.parse(lengthController.text);
-    widthController.text == '' ? widthInputValue = 0.0 : widthInputValue = double.parse(widthController.text);
-    depthController.text == '' ? depthInputValue = 0.0 : depthInputValue = double.parse(depthController.text);
+  getNumbers() {
+    lengthController.text == ''
+        ? lengthInputValue = 0.0
+        : lengthInputValue = double.parse(lengthController.text);
+    widthController.text == ''
+        ? widthInputValue = 0.0
+        : widthInputValue = double.parse(widthController.text);
+    depthController.text == ''
+        ? depthInputValue = 0.0
+        : depthInputValue = double.parse(depthController.text);
 
     depthToFeet = (depthInputValue - 5.5) * (1 / 12);
 
     squareYards = (lengthInputValue * widthInputValue) / 9;
-    cubicYards = (lengthInputValue * widthInputValue * (depthInputValue / 12)) / 27;
+    cubicYards =
+        (lengthInputValue * widthInputValue * (depthInputValue / 12)) / 27;
 
     excavation = cubicYards;
-    depthInputValue > 5.5 ? gravelBaseCourse = ((lengthInputValue * widthInputValue * depthToFeet) / 27) * 1.75 : gravelBaseCourse = 0;
+    depthInputValue > 5.5
+        ? gravelBaseCourse =
+            ((lengthInputValue * widthInputValue * depthToFeet) / 27) * 1.75
+        : gravelBaseCourse = 0;
     hotBitAsphalt = (110 * squareYards * 5.5) / 2000;
     tackCoat = squareYards * .07;
     pg5828 = hotBitAsphalt * .06;
 
-    
     setState(() {
-     squareYardsString = squareYards.toStringAsFixed(2);
-     cubicYardsString = cubicYards.toStringAsFixed(2);
+      squareYardsString = squareYards.toStringAsFixed(2);
+      cubicYardsString = cubicYards.toStringAsFixed(2);
 
-     excavationString = excavation.toStringAsFixed(2);
-     gravelBaseCourseString = gravelBaseCourse.toStringAsFixed(2);
-     hotBitAsphaltString = hotBitAsphalt.toStringAsFixed(2);
-     tackCoatString = tackCoat.toStringAsFixed(2);
-     pg5828String = pg5828.toStringAsFixed(2);     
+      excavationString = excavation.toStringAsFixed(2);
+      gravelBaseCourseString = gravelBaseCourse.toStringAsFixed(2);
+      hotBitAsphaltString = hotBitAsphalt.toStringAsFixed(2);
+      tackCoatString = tackCoat.toStringAsFixed(2);
+      pg5828String = pg5828.toStringAsFixed(2);
     });
   }
 
-
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Road Construction Estimates"),
@@ -79,67 +84,60 @@ class _RoadConstructionAppState extends State<RoadConstruction>{
       body: Center(
         child: Column(
           children: [
-
             //this will contain a row for the three input fields
             Container(
               height: 80.0,
               padding: EdgeInsets.all(10),
-
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-
-
-                  Text('L (ft)'),
-                  Container(
-                    padding: EdgeInsets.fromLTRB(10, 10, 20, 15),
-                    width: 75,
-                    child: TextField(
-                      textAlign: TextAlign.center,
-                      controller: lengthController,
-                      keyboardType: TextInputType.number,
-                      onTap: () => lengthController.selection = TextSelection(baseOffset: 0, extentOffset: lengthController.value.text.length),
-                    ),
+              child:
+                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                Text('L (ft)'),
+                Container(
+                  padding: EdgeInsets.fromLTRB(10, 10, 20, 15),
+                  width: 75,
+                  child: TextField(
+                    textAlign: TextAlign.center,
+                    controller: lengthController,
+                    keyboardType: TextInputType.number,
+                    onTap: () => lengthController.selection = TextSelection(
+                        baseOffset: 0,
+                        extentOffset: lengthController.value.text.length),
                   ),
-
-
-                  Text('W (ft)'),
-                  Container(
-                    padding: EdgeInsets.fromLTRB(10, 10, 20, 15),
-                    width:  75,
-                    child: TextField(
-                      textAlign: TextAlign.center,
-                      controller: widthController,
-                      keyboardType: TextInputType.number,
-                      onTap: () => widthController.selection = TextSelection(baseOffset: 0, extentOffset: widthController.value.text.length),
-                    ),
+                ),
+                Text('W (ft)'),
+                Container(
+                  padding: EdgeInsets.fromLTRB(10, 10, 20, 15),
+                  width: 75,
+                  child: TextField(
+                    textAlign: TextAlign.center,
+                    controller: widthController,
+                    keyboardType: TextInputType.number,
+                    onTap: () => widthController.selection = TextSelection(
+                        baseOffset: 0,
+                        extentOffset: widthController.value.text.length),
                   ),
-
-
-                  Text('D (in)'),
-                  Container(
-                    padding: EdgeInsets.fromLTRB(10, 10, 20, 15),
-                    width: 60,
-                    child: TextField(
-                      textAlign: TextAlign.center,
-                      controller: depthController,
-                      keyboardType: TextInputType.number,
-                      onTap: () => depthController.selection = TextSelection(baseOffset: 0, extentOffset: depthController.value.text.length),
-                    ),
+                ),
+                Text('D (in)'),
+                Container(
+                  padding: EdgeInsets.fromLTRB(10, 10, 20, 15),
+                  width: 60,
+                  child: TextField(
+                    textAlign: TextAlign.center,
+                    controller: depthController,
+                    keyboardType: TextInputType.number,
+                    onTap: () => depthController.selection = TextSelection(
+                        baseOffset: 0,
+                        extentOffset: depthController.value.text.length),
                   ),
-                ]
-              ),
+                ),
+              ]),
             ),
 
             RawMaterialButton(
               fillColor: Colors.blue,
               shape: CircleBorder(),
-              
               child: Icon(
                 Construction.shovel,
               ),
-
-
               onPressed: getNumbers,
             ),
 
@@ -149,67 +147,64 @@ class _RoadConstructionAppState extends State<RoadConstruction>{
                 children: [
                   Align(
                     alignment: Alignment.topCenter,
-                    child: Text('Square Yards: $squareYardsString\t\t Cubic Yards: $cubicYardsString'),
+                    child: Text(
+                        'Square Yards: $squareYardsString Cubic Yards: $cubicYardsString'),
                   ),
-
-
                   Row(
-                    
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         'PG 58-28:',
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
                       ),
-                      Text('$pg5828String\tTON'),
+                      Text('$pg5828String TON'),
                     ],
                   ),
-
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         'Excavation :',
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
                       ),
-                      Text('$excavationString\t\t\t\tCY'),
+                      Text('$excavationString CY'),
                     ],
                   ),
-
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         'Gravel Base Course :',
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
                       ),
-                      Text('$gravelBaseCourseString\tTON'),
+                      Text('$gravelBaseCourseString TON'),
                     ],
                   ),
-
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         'Hot Bit. Asphalt :',
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
                       ),
-                      Text('$hotBitAsphaltString\tTON'),
+                      Text('$hotBitAsphaltString TON'),
                     ],
                   ),
-
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         'Tack Coat :',
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
                       ),
-                      Text('$tackCoatString\t\tGAL'),
+                      Text('$tackCoatString GAL'),
                     ],
                   ),
-
-
                 ],
               ),
             ),
@@ -217,15 +212,9 @@ class _RoadConstructionAppState extends State<RoadConstruction>{
         ),
       ),
     );
-
-
   } // build
 
-
-
-
 } // class
-
 
 /*
   Excavation - CY
