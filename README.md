@@ -1,16 +1,6 @@
-# construction
+# Construction Numbers
 
-A new Flutter project.
+This app is a special calculator I made to be used at my office.
+It takes a cubic area from length x width x depth of desired roadway and outputs the estimated quantities required for the reconstruction.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+I made this app after getting tired of having to handwrite the same formulas over and over again
