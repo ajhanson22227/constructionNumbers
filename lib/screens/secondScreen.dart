@@ -142,6 +142,7 @@ class _RoadConstructionAppState extends State<RoadConstruction> {
             ),
 
             Expanded(
+              flex: 5,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -151,10 +152,11 @@ class _RoadConstructionAppState extends State<RoadConstruction> {
                         'Square Yards: $squareYardsString Cubic Yards: $cubicYardsString'),
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         'PG 58-28:',
+                        textAlign: TextAlign.left,
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
@@ -162,10 +164,11 @@ class _RoadConstructionAppState extends State<RoadConstruction> {
                     ],
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         'Excavation :',
+                        textAlign: TextAlign.left,
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
@@ -173,10 +176,11 @@ class _RoadConstructionAppState extends State<RoadConstruction> {
                     ],
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         'Gravel Base Course :',
+                        textAlign: TextAlign.left,
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
@@ -184,10 +188,11 @@ class _RoadConstructionAppState extends State<RoadConstruction> {
                     ],
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         'Hot Bit. Asphalt :',
+                        textAlign: TextAlign.left,
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
@@ -195,10 +200,11 @@ class _RoadConstructionAppState extends State<RoadConstruction> {
                     ],
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         'Tack Coat :',
+                        textAlign: TextAlign.left,
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
