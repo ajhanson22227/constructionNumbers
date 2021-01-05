@@ -155,7 +155,7 @@ class _RoadConstructionAppState extends State<RoadConstruction> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'PG 58-28:',
+                        'PG 58-28: ',
                         textAlign: TextAlign.left,
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
@@ -167,7 +167,7 @@ class _RoadConstructionAppState extends State<RoadConstruction> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Excavation :',
+                        'Excavation: ',
                         textAlign: TextAlign.left,
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
@@ -179,7 +179,7 @@ class _RoadConstructionAppState extends State<RoadConstruction> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Gravel Base Course :',
+                        'Gravel Base Course: ',
                         textAlign: TextAlign.left,
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
@@ -191,7 +191,7 @@ class _RoadConstructionAppState extends State<RoadConstruction> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Hot Bit. Asphalt :',
+                        'Hot Bit. Asphalt: ',
                         textAlign: TextAlign.left,
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
@@ -203,7 +203,7 @@ class _RoadConstructionAppState extends State<RoadConstruction> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Tack Coat :',
+                        'Tack Coat: ',
                         textAlign: TextAlign.left,
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
