@@ -141,76 +141,101 @@ class _RoadConstructionAppState extends State<RoadConstruction> {
               onPressed: getNumbers,
             ),
 
-            Expanded(
-              flex: 5,
+            Container(
+              width: 400,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  SizedBox(height: 20,),
                   Align(
                     alignment: Alignment.topCenter,
                     child: Text(
                         'Square Yards: $squareYardsString Cubic Yards: $cubicYardsString'),
                   ),
+                  SizedBox(height: 20,),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text(
-                        'PG 58-28: ',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
+                      Container(
+                        width: 200,
+                        child: Text(
+                          'PG 58-28: ',
+                          textAlign: TextAlign.right,
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
                       ),
-                      Text('$pg5828String TON'),
+                      
+                      Text(' $pg5828String TON'),
                     ],
                   ),
+                  SizedBox(height: 20,),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text(
-                        'Excavation: ',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
+                      Container(
+                        width: 200,
+                        child: Text(
+                          'Excavation: ',
+                          textAlign: TextAlign.right,
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
                       ),
-                      Text('$excavationString CY'),
+                      
+                      Text(' $excavationString CY'),
                     ],
                   ),
+                  SizedBox(height: 20,),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text(
-                        'Gravel Base Course: ',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
+                      Container(
+                        width: 200,
+                        child:  Text(
+                          'Gravel Base Course: ',
+                          textAlign: TextAlign.right,
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
                       ),
-                      Text('$gravelBaseCourseString TON'),
+                      
+                      Text(' $gravelBaseCourseString TON'),
                     ],
                   ),
+                  SizedBox(height: 20,),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text(
-                        'Hot Bit. Asphalt: ',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
+                      Container(
+                        width: 200,
+                         child: Text(
+                          'Hot Bit. Asphalt: ',
+                          textAlign: TextAlign.right,
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
                       ),
-                      Text('$hotBitAsphaltString TON'),
+                      Text(' $hotBitAsphaltString TON'),
                     ],
                   ),
+                  SizedBox(height: 20,),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text(
-                        'Tack Coat: ',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
+                      Container(
+                        width: 200,
+                        child: Text(
+                          'Tack Coat: ',
+                          textAlign: TextAlign.right,
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
                       ),
-                      Text('$tackCoatString GAL'),
+                      Text(' $tackCoatString GAL'),
                     ],
                   ),
+                  SizedBox(height: 20,),
                 ],
               ),
             ),
